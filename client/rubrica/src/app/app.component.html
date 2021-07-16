@@ -12,6 +12,7 @@ Telefono<input type="text" [(ngModel)]="contatto.telefono">
 
 <h2>Lista Contatti</h2>
 <table>
+<<<<<<< HEAD
   <tr>
     <th>Id contatto</th>
     <th>Nome</th>
@@ -27,3 +28,21 @@ Telefono<input type="text" [(ngModel)]="contatto.telefono">
       <button (click)="rimuovi(c)">Elimina</button>
     </td>
   </tr>
+=======
+  <tr *ngFor="let c of contatti">
+  
+  <td>{{contatti.id}} </td>
+  
+  <td>{{contatti.nome}}</td>
+  
+  <td>{{contatti.cognome}}</td>
+  
+  <td>{{contatti.numero}} </td>
+
+  <button (click)="rimuovi(c)">ELIMINA</button>
+</tr>
+
+
+
+
+>>>>>>> 8af24597fb0b0ca07cd0b140e244fec18bf14eac
