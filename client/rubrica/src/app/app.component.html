@@ -11,15 +11,17 @@ Nome<input type="text"> Cognome<input type="text">  Telefono<input type="text">
 
 <h2>Lista Contatti</h2> 
 <table>
-  <tr>
-  <th>Id contatto</th>
-  <td>{{contatti.id}}</td><button (click)="rimuovi(c)">ELIMINA</button>
-  <th>Nome</th>
+  <tr *ngFor="let c of contatti">
+  
+  <td>{{contatti.id}} </td>
+  
   <td>{{contatti.nome}}</td>
-  <th>Cognome</th>
+  
   <td>{{contatti.cognome}}</td>
-  <th>Telefono</th>
+  
   <td>{{contatti.numero}} </td>
+
+  <button (click)="rimuovi(c)">ELIMINA</button>
 </tr>
 
 
