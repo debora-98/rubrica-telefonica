@@ -1,27 +1,29 @@
 <h1>Rubrica telefonica</h1>
 <br>
-Nome<input type="text"> Cognome<input type="text">  Telefono<input type="text">
+Nome<input type="text" [(ngModel)]="contatto.nome">
+Cognome<input type="text" [(ngModel)]="contatto.cognome"> 
+Telefono<input type="text" [(ngModel)]="contatto.telefono">
 
 <br>
-<button (click)="aggiungi()"><h6>Aggiungi</h6></button> 
-
-
-<b *ngIf="!(rubrica.nome)">Errore: Il campo non può essere vuoto!</b>
+<button (click)="aggiungi()">
+  <h6>Aggiungi</h6>
+</button>
 <br>
 
-<h2>Lista Contatti</h2> 
+<h2>Lista Contatti</h2>
 <table>
   <tr>
-  <th>Id contatto</th>
-  <td>{{contatti.id}}</td><button (click)="rimuovi(c)">ELIMINA</button>
-  <th>Nome</th>
-  <td>{{contatti.nome}}</td>
-  <th>Cognome</th>
-  <td>{{contatti.cognome}}</td>
-  <th>Telefono</th>
-  <td>{{contatti.numero}} </td>
-</tr>
-
-
-
-
+    <th>Id contatto</th>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Telefono</th>
+  </tr>
+  <tr *ngFor="let c of contatti">
+    <td>{{c.id}}</td>
+    <td>{{c.nome}}</td>
+    <td>{{c.cognome}}</td>
+    <td>{{c.telefono}} </td>
+    <td>
+      <button (click)="rimuovi(c)">Elimina</button>
+    </td>
+  </tr>

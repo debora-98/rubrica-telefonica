@@ -12,9 +12,6 @@ export class AppComponent {
 
   contatto: Contatto = new Contatto();
   contatti: Contatto[] = [];
-  title: any;
-  
-
 
   constructor(private http: HttpClient) {
     // recuperare da server la lista dei contatti
